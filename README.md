@@ -1,43 +1,54 @@
-# Audiobook Classification Project
+# Audiobooks Data Classification with Neural Network
 
-## Overview
+This repository contains Python code for building a neural network model using TensorFlow and scikit-learn to perform binary classification on audiobooks data.
 
-This repository contains the code for a neural network-based audiobook classification project. The project involves preprocessing audiobook data, training a neural network model, and making predictions on new data.
+## Dataset
 
-## Files
+The dataset is loaded from 'Audiobooks_data.csv', consisting of input features and binary target labels. To address class imbalance, excess instances of the dominant class are removed.
 
-- **Audiobooks_data_pt.csv:** Preprocessed data containing features and target labels.
-- **Audiobooks_data_testing.csv:** New input data for prediction.
-- **your_trained_model_path:** Trained neural network model saved during or after training.
-- **Audiobooks_data_train.npz, Audiobooks_data_validation.npz, Audiobooks_data_test.npz:** Intermediate data files used during data splitting.
+## Data Preprocessing
 
-## Code Structure
+1. Inputs are scaled using standardization (`preprocessing.scale`).
+2. Shuffling and splitting into training, validation, and test sets are performed.
 
-1. **Data Preprocessing:**
-   - Load preprocessed data into a DataFrame (`df`).
-   - Load new input data for prediction.
+## Neural Network Model
 
-2. **Model Prediction:**
-   - Load the trained neural network model.
-   - Predict classes for the new input data.
-   - Print the predicted class.
+The neural network architecture is defined as follows:
 
-3. **Updating DataFrame and Saving Results:**
-   - Update the DataFrame with predicted classes.
-   - Save the updated DataFrame to a new CSV file (`Audiobooks_data_pt.csv`).
+- Input layer: 10 nodes
+- Hidden layers: Two layers with 50 nodes each and ReLU activation
+- Output layer: 2 nodes with softmax activation for binary classification
+
+## Model Training
+
+The model is compiled with Adam optimizer and sparse categorical crossentropy loss. Training includes early stopping to prevent overfitting, with a batch size of 100 and a maximum of 100 epochs.
+
+## Model Evaluation
+
+The trained model is evaluated on the test set, and test loss and accuracy are printed.
+
+## Prediction on Additional Data
+
+Additional data from 'Audiobooks_data_testing.csv' is loaded for predictions. Predicted classes are added as a new column to 'Audiobooks_data_pt.csv'.
 
 ## Usage
 
-1. Ensure all required dependencies are installed (`tensorflow`, `numpy`, `pandas`, `scikit-learn`).
-2. Place the preprocessed data file (`Audiobooks_data_pt.csv`), new input data file (`Audiobooks_data_testing.csv`), and the trained model file (`your_trained_model_path`) in the same directory as the script.
-3. Execute the script to make predictions on new data and update the DataFrame.
+1. Ensure you have the required libraries installed (`tensorflow`, `numpy`, `scikit-learn`, `pandas`).
+2. Run the provided Python script.
 
-## Dependencies
+## File Structure
 
-- TensorFlow
-- NumPy
-- Pandas
-- scikit-learn
+- `Audiobooks_data.csv`: Original dataset
+- `Audiobooks_data_pt.csv`: Updated dataset with predicted classes
+- `Audiobooks_data_train.npz`, `Audiobooks_data_validation.npz`, `Audiobooks_data_test.npz`: Saved numpy arrays for training, validation, and test sets
+- `README.md`: Documentation file
+
+## Note
+
+Ensure that file paths and data dimensions are correctly specified in the code.
+
+Feel free to reach out for any questions or improvements!
+
 
 ## License
 
