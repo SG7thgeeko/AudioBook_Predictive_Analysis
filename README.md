@@ -4,7 +4,10 @@ This repository contains Python code for building a neural network model using T
 
 ## Dataset
 
-The dataset is loaded from 'Audiobooks_data.csv', consisting of input features and binary target labels. To address class imbalance, excess instances of the dominant class are removed.
+1.The data set contains data sourced from an audiobook application. Each customer in the database has made a purchase atleast once.The data represents two years worth of engagement.
+2.One can predict if the customer will make a purchase again from the audiobook company.
+3.The main idea is that the company shouldn't spend its advertising budget targeting individuals who are unlikely to come back. If we can focus our efforts on customers likely to convert again, we can obtain improved sales and profitability figures.
+4.The dataset is loaded from 'Audiobooks_data.csv', consisting of input features and binary target labels.
 
 ## Data Preprocessing
 
@@ -48,8 +51,3 @@ Additional data from 'Audiobooks_data_testing.csv' is loaded for predictions. Pr
 Ensure that file paths and data dimensions are correctly specified in the code.
 
 Feel free to reach out for any questions or improvements!
-
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
