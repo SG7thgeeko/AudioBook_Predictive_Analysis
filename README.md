@@ -5,8 +5,11 @@ This repository contains Python code for building a neural network model using T
 ## Dataset
 
 1.The data set contains data sourced from an audiobook application. Each customer in the database has made a purchase atleast once.The data represents two years worth of engagement.
+
 2.One can predict if the customer will make a purchase again from the audiobook company.
+
 3.The main idea is that the company shouldn't spend its advertising budget targeting individuals who are unlikely to come back. If we can focus our efforts on customers likely to convert again, we can obtain improved sales and profitability figures.
+
 4.The dataset is loaded from 'Audiobooks_data.csv', consisting of input features and binary target labels.
 
 ## Data Preprocessing
